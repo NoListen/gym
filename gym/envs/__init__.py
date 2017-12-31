@@ -291,6 +291,11 @@ register(
     max_episode_steps=1000,
 )
 
+register(
+    id='HumanoidFree-v1',
+    entry_point='gym.envs.mujoco:HumanoidFreeEnv',
+    max_episode_steps=1000,
+)
 
 register(
     id='HumanoidStandup-v1',

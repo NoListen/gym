@@ -15,3 +15,4 @@ from gym.envs.mujoco.pusher import PusherEnv
 from gym.envs.mujoco.thrower import ThrowerEnv
 from gym.envs.mujoco.striker import StrikerEnv
 from gym.envs.mujoco.humanoid_y import HumanoidYEnv
+from gym.envs.mujoco.humanoid_free import HumanoidFreeEnv
