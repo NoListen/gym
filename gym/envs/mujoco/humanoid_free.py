@@ -35,9 +35,10 @@ class HumanoidFreeEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         quad_ctrl_cost = 0.1 * np.square(data.ctrl).sum()
         quad_impact_cost = .5e-6 * np.square(data.cfrc_ext).sum()
         quad_impact_cost = min(quad_impact_cost, 10)
-        reward["forward"] = lin_vel_cost[0] - quad_ctrl_cost - quad_impact_cost + alive_bonus
-        reward["left"] = lin_vel_cost[1] - quad_ctrl_cost - quad_impact_cost + alive_bonus
-        reward["right"] = -lin_vel_cost[1] - quad_ctrl_cost - quad_impact_cost + alive_bonus
+        reward["forward"] = lin_vel_cost[0]
+        reward["left"] = lin_vel_cost[1]
+        reward["right"] = -lin_vel_cost[1]
+        reward["base"] = - quad_ctrl_cost - quad_impact_cost + alive_bonus
 
         qpos = self.model.data.qpos
         done = bool((qpos[2] < 1.0) or (qpos[2] > 2.0))
