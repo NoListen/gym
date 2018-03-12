@@ -280,6 +280,13 @@ register(
 )
 
 register(
+    id='AntMaze-v1',
+    entry_point='gym.envs.mujoco:AntMazeEnv',
+    max_episode_steps=1000,
+    reward_threshold=10.0
+)
+
+register(
     id='AntFree-v1',
     entry_point='gym.envs.mujoco:AntFreeEnv',
     max_episode_steps=1000,

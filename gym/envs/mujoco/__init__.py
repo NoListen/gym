@@ -17,3 +17,4 @@ from gym.envs.mujoco.striker import StrikerEnv
 from gym.envs.mujoco.humanoid_y import HumanoidYEnv
 from gym.envs.mujoco.humanoid_free import HumanoidFreeEnv
 from gym.envs.mujoco.ant_free import AntFreeEnv
+from gym.envs.mujoco.maze.ant_maze_env import AntMazeEnv
