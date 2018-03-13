@@ -6,7 +6,6 @@ import gym.spaces as spaces
 from gym.envs.mujoco.proxy_env import ProxyEnv
 from gym.envs.mujoco.maze.maze_env_utils import construct_maze
 from gym.envs.mujoco.maze.maze_env_utils import ray_segment_intersect, point_distance
-from gym import utils
 import os
 
 class MazeEnv(ProxyEnv):
@@ -229,6 +228,7 @@ class MazeEnv(ProxyEnv):
         return spaces.Box(ub * -1, ub)
 
     # space of only the robot observations (they go first in the get current obs) THIS COULD GO IN PROXYENV
+    @property
     def robot_observation_space(self):
         shp = self.get_current_robot_obs().shape
         ub = np.inf * np.ones(shp)

@@ -287,6 +287,27 @@ register(
 )
 
 register(
+    id='SwimmerMaze-v1',
+    entry_point='gym.envs.mujoco:SwimmerMazeEnv',
+    max_episode_steps=1000,
+    reward_threshold=10.0
+)
+
+register(
+    id='AntGather-v1',
+    entry_point="gym.envs.mujoco:AntGatherEnv",
+    max_episode_steps=1000,
+    reward_threshold=6000.0 # not sure
+)
+
+register(
+    id='SwimmerGather-v1',
+    entry_point="gym.envs.mujoco:SwimmerGatherEnv",
+    max_episode_steps=1000,
+    reward_threshold=6000.0 # not sure
+)
+
+register(
     id='AntFree-v1',
     entry_point='gym.envs.mujoco:AntFreeEnv',
     max_episode_steps=1000,

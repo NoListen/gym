@@ -3,8 +3,11 @@ from gym import utils
 from gym.envs.mujoco import mujoco_env
 
 class SwimmerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
-    def __init__(self):
-        mujoco_env.MujocoEnv.__init__(self, 'swimmer.xml', 4)
+    FILE = 'swimmer.xml'
+    ORI_IND = 2
+
+    def __init__(self, model_path='swimmer.xml'):
+        mujoco_env.MujocoEnv.__init__(self, model_path, 4)
         utils.EzPickle.__init__(self)
 
     def _step(self, a):
@@ -29,3 +32,6 @@ class SwimmerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             self.init_qvel + self.np_random.uniform(low=-.1, high=.1, size=self.model.nv)
         )
         return self._get_obs()
+
+    def get_ori(self):
+        return self.model.data.qpos[self.__class__.ORI_IND]

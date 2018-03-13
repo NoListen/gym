@@ -18,3 +18,6 @@ from gym.envs.mujoco.humanoid_y import HumanoidYEnv
 from gym.envs.mujoco.humanoid_free import HumanoidFreeEnv
 from gym.envs.mujoco.ant_free import AntFreeEnv
 from gym.envs.mujoco.maze.ant_maze_env import AntMazeEnv
+from gym.envs.mujoco.maze.swimmer_maze_env import SwimmerMazeEnv
+from gym.envs.mujoco.gather.ant_gather_env import AntGatherEnv
+from gym.envs.mujoco.gather.swimmer_gather_env import SwimmerGatherEnv
