@@ -1,4 +1,3 @@
-from rllab.misc import logger
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -341,8 +340,7 @@ def plot_state(self, name='sensors', state=None):
         end_xy_plot = (o_ij + end_xy / size_scaling) * 2
         plt.plot([robot_xy_plot[0], end_xy_plot[0]], [robot_xy_plot[1], end_xy_plot[1]], 'g')
 
-    log_dir = logger.get_snapshot_dir()
     ax.set_title('sensors: ' + name)
-
-    plt.savefig(osp.join(log_dir, name + '_sesors.png'))  # this saves the current figure, here f
+    # save locally
+    plt.savefig(name + '_sesors.png')  # this saves the current figure, here f
     plt.close()
